@@ -73,7 +73,7 @@ func main() {
 ```
 ### Функции
 ___
-```go
+```
 SearchGroup(host, groupName string) -> (string, error)
 TimeTableGroup(host, groupId, date, dateEnd string) -> (TimeTable, error)
 SearchTeacher(host, teacherName string) -> (string, error)
