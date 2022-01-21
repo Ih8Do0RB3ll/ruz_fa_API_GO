@@ -73,8 +73,8 @@ func main() {
 ### Функции
 ___
 ```go
-SearchGroup(host, groupName string) -> returns (string, error)
-TimeTableGroup(host, groupId, date, dateEnd string) -> returns(TimeTable, error)
-SearchTeacher(host, teacherName string) -> returns (string, error)
-TimeTableTeacher(host, teachId, date, dateEnd string) -> returns(TimeTable, error)
+SearchGroup(host, groupName string) -> (string, error)
+TimeTableGroup(host, groupId, date, dateEnd string) -> (TimeTable, error)
+SearchTeacher(host, teacherName string) -> (string, error)
+TimeTableTeacher(host, teachId, date, dateEnd string) -> (TimeTable, error)
 ```
