@@ -13,7 +13,7 @@ go get github.com/Ih8Do0RB3ll/ruz_fa_API_GO
 ## Примеры
 
 ____
-###Пример работы с группами
+### Пример работы с группами
 
 ```go
 package main
