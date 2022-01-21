@@ -86,3 +86,4 @@ type Teacher []struct {
 	Description string `json:"description"`
 	Type        string `json:"type"`
 }
+

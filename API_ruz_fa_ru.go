@@ -10,11 +10,13 @@ import (
 	"time"
 )
 
+var host = "https://ruz.fa.ru"
+
 func dateNow() string {
 	return time.Now().Format("2006.01.02")
 }
 
-func SearchGroup(host, groupName string) (string, error) {
+func SearchGroup(groupName string) (string, error) {
 	// поиск группы по названию, возвращает ID группы.
 	url := fmt.Sprintf("%s/api/search?term=%s&type=group", host, groupName)
 	resp, err := http.Get(url)
@@ -39,7 +41,7 @@ func SearchGroup(host, groupName string) (string, error) {
 	return id, err
 }
 
-func TimeTableGroup(host, groupId, date, dateEnd string) (TimeTable, error) {
+func TimeTableGroup(groupId, date, dateEnd string) (TimeTable, error) {
 	// отдает структуру timeTable(расписание) по ID группы ¯\_(ツ)_/¯
 	if date == "" || dateEnd == "" {
 		date = dateNow()
@@ -69,7 +71,7 @@ func TimeTableGroup(host, groupId, date, dateEnd string) (TimeTable, error) {
 
 }
 
-func SearchTeacher(host, teacherName string) (string, error) {
+func SearchTeacher(teacherName string) (string, error) {
 	// поиск препода по его ФИО, отдает ID первой записи, так что лучше кормить ФИО полностью
 	teacherName = strings.ReplaceAll(teacherName, " ", "%20")
 	url := fmt.Sprintf("%s/api/search?term=%s&type=person", host, teacherName)
@@ -95,7 +97,7 @@ func SearchTeacher(host, teacherName string) (string, error) {
 	return id, err
 }
 
-func TimeTableTeacher(host, teachId, date, dateEnd string) (TimeTable, error) {
+func TimeTableTeacher(teachId, date, dateEnd string) (TimeTable, error) {
 	// отдает структуру timeTable(расписание) по ID преподавателя ¯\_(ツ)_/¯
 	if date == "" || dateEnd == "" {
 		date = dateNow()
